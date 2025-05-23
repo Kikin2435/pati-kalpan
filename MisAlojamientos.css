@@ -1,12 +1,44 @@
-
+/* Estilos personalizados para MisAlojamientos.html */
 .container {
     padding: 20px;
 }
 
+/* Ajustes adicionales para la tabla si es necesario */
 #alojamientosTable {
     font-size: 14px;
 }
 
-.eliminar-btn, .modificar-btn {
+/* Estilo para los botones */
+.eliminar-btn, .modificar-btn, .disponible-btn, .no-disponible-btn {
     margin: 0 5px;
+}
+
+/* Estilo para la columna Estatus */
+.estatus-disponible {
+    color: green;
+    font-weight: bold;
+}
+
+.estatus-no-disponible {
+    color: red;
+    font-weight: bold;
+}
+
+/* Estilo para la columna Reservas */
+.reservas-count {
+    display: inline-block;
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Estilo para alojamientos no disponibles en Menu.html */
+.no-disponible {
+    opacity: 0.5;
+    pointer-events: none; /* Deshabilita interacciones */
 }

@@ -130,47 +130,115 @@ const alojamientos = [
     }
 ];
 
+// Variable para almacenar el ID del alojamiento seleccionado
+let selectedAlojamientoId = null;
+
 // Función para poblar el modal con los datos del alojamiento seleccionado
 document.addEventListener('DOMContentLoaded', () => {
+    const alojamientosElements = Array.from(document.querySelectorAll('.alojamiento'));
+
+    // Aplicar estilos iniciales según el estatus en localStorage
+    alojamientosElements.forEach(element => {
+        const id = parseInt(element.getAttribute('data-id'));
+        const estatus = localStorage.getItem(`estatus_${id}`) || "Disponible";
+        if (estatus === "No disponible") {
+            element.classList.add('no-disponible');
+        }
+    });
+
     document.querySelectorAll('.M-D-I').forEach(item => {
         item.addEventListener('click', () => {
             const id = parseInt(item.getAttribute('data-id'));
+            const estatus = localStorage.getItem(`estatus_${id}`) || "Disponible";
+            
+            // Solo permitir abrir el modal si el alojamiento está disponible
+            if (estatus === "No disponible") {
+                alert("Este alojamiento no está disponible actualmente.");
+                return;
+            }
+
+            selectedAlojamientoId = id; // Guardar el ID del alojamiento seleccionado
             const alojamiento = alojamientos.find(a => a.id === id);
 
             document.getElementById('modalImage').src = alojamiento.image;
             document.getElementById('modalTitle').textContent = alojamiento.title;
             document.getElementById('modalUbicacion').textContent = alojamiento.ubicacion;
             document.getElementById('modalPrice').textContent = alojamiento.price;
+            document.getElementById('modalDesc').textContent = alojamiento.desc;
+            document.getElementById('modalTipo').textContent = alojamiento.tipo;
+            document.getElementById('modalHabitaciones').textContent = alojamiento.habitaciones;
+            document.getElementById('modalBanos').textContent = alojamiento.banos;
+            document.getElementById('modalSuperficie').textContent = alojamiento.superficie;
+            document.getElementById('modalAmenidades').textContent = alojamiento.amenidades;
+            document.getElementById('modalServicios').textContent = alojamiento.servicios;
+            document.getElementById('modalEstacionamiento').textContent = alojamiento.estacionamiento;
+            document.getElementById('modalReglas').textContent = alojamiento.reglas;
         });
     });
 
-    // Acción del botón "Reservar Ahora" (simulada)
+    // Acción del botón "Reservar Ahora"
     document.getElementById('btnReservar').addEventListener('click', () => {
-        alert('Funcionalidad de reservar aún no implementada');
+        if (selectedAlojamientoId) {
+            // Incrementar el conteo de reservas en localStorage
+            const key = `reservas_${selectedAlojamientoId}`;
+            let reservas = parseInt(localStorage.getItem(key)) || 0;
+            reservas += 1;
+            localStorage.setItem(key, reservas.toString());
+            alert(`Reserva realizada para el alojamiento con ID: ${selectedAlojamientoId}. Total de reservas: ${reservas}`);
+            selectedAlojamientoId = null; // Reiniciar el ID después de usarlo
+        } else {
+            alert('Error: No se pudo identificar el alojamiento para reservar.');
+        }
     });
 
     // Filtro dinámico
     const filtroUbicacion = document.getElementById('filtroUbicacion');
     const filtroPrecioMin = document.getElementById('filtroPrecioMin');
     const filtroPrecioMax = document.getElementById('filtroPrecioMax');
-    const alojamientosElements = document.querySelectorAll('.alojamiento');
+    const main3Containers = document.querySelectorAll('#Main-3');
 
     function filtrarAlojamientos() {
         const ubicacion = filtroUbicacion.value.toLowerCase().trim();
         const precioMin = parseFloat(filtroPrecioMin.value) || 0;
         const precioMax = parseFloat(filtroPrecioMax.value) || Infinity;
 
+        // Separar alojamientos que coinciden y los que no
+        const matchingElements = [];
+        const nonMatchingElements = [];
+
         alojamientosElements.forEach(element => {
             const id = parseInt(element.getAttribute('data-id'));
             const alojamiento = alojamientos.find(a => a.id === id);
+            const estatus = localStorage.getItem(`estatus_${id}`) || "Disponible";
             const matchesUbicacion = ubicacion === '' || alojamiento.ubicacion.toLowerCase().includes(ubicacion);
             const matchesPrecio = alojamiento.price >= precioMin && alojamiento.price <= precioMax;
 
-            if (matchesUbicacion && matchesPrecio) {
+            if (matchesUbicacion && matchesPrecio && estatus === "Disponible") {
+                matchingElements.push(element);
                 element.style.display = 'block';
             } else {
+                nonMatchingElements.push(element);
                 element.style.display = 'none';
             }
+        });
+
+        // Combinar los elementos: primero los que coinciden, luego los que no
+        const reorderedElements = [...matchingElements, ...nonMatchingElements];
+
+        // Distribuir los elementos en los contenedores #Main-3 (4 por fila)
+        main3Containers.forEach((container, index) => {
+            // Limpiar el contenedor
+            container.innerHTML = '';
+
+            // Obtener los elementos que irán en este contenedor (4 por contenedor)
+            const start = index * 4;
+            const end = start + 4;
+            const elementsForContainer = reorderedElements.slice(start, end);
+
+            // Agregar los elementos al contenedor
+            elementsForContainer.forEach(element => {
+                container.appendChild(element);
+            });
         });
     }
 
