@@ -5,6 +5,5 @@ class Usuario {
     public $correo = "";
     public $contrasenia = "";
     public $telefono = "";
-    public $tipo = "";
 }
 ?>
