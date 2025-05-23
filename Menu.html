@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="Menu.css">
+    <!-- Incluir Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <nav>
+        <div id="Logo"></div>
+        <div class="nav-text">
+        </div>             
+        <div id="Sesion">
+            <ul class="dropdown">
+                <li><a href="Anunciar_Alojamiento.html">Pon tu casa en Kalpan</a></li>
+                <li><a href="Nosotros.html">Nosotros</a></li>
+                <li><a href="MisAlojamientos.html">Mis Alojamientos</a></li>
+                <li><b><a href="index.html">Cerrar sesión</a></b></li>
+            </ul>
+        </div>             
+    </nav>
+    <main>
+        <div id="Main-2">
+            <div id="Maps">
+                <div></div>
+            </div>
+            <div id="Submenu">
+                <div id="S-1">
+                    <h3>Ubicación</h3>
+                    <input type="text" placeholder="Buscar por ubicación" id="filtroUbicacion">
+                </div>
+                <div id="S-2">
+                    <h3>Precio Mínimo</h3>
+                    <input type="number" placeholder="Precio mínimo" id="filtroPrecioMin">
+                </div>
+                <div id="S-3">
+                    <h3>Precio Máximo</h3>
+                    <input type="number" placeholder="Precio máximo" id="filtroPrecioMax">
+                </div>
+            </div>
+        </div>
+        <div id="Main-3">
+            <div class="M-D alojamiento" data-id="1">
+                <div class="M-D-I" id="I-1" data-bs-toggle="modal" data-bs-target="#alojamientoModal" data-id="1"></div>
+                <div class="M-D-T">
+                    <h4>Habitación de Juan Jonhson</h4>
+                    <p>Centro, Ciudad de México</p>
+                    <h4>$300 mensuales</h4>
+                </div>
+            </div>
+            <div class="M-D alojamiento" data-id="2">
+                <div class="M-D-I" id="I-2" data-bs-toggle="modal" data-bs-target="#alojamientoModal" data-id="2"></div>
+                <div class="M-D-T">
+                    <h4>Cuarto en La Calera</h4>
+                    <p>La Calera, Puebla</p>
+                    <h4>$500 mensuales</h4>
+                </div>
+            </div>
+            <div class="M-D alojamiento" data-id="3">
+                <div class="M-D-I" id="I-3" data-bs-toggle="modal" data-bs-target="#alojamientoModal" data-id="3"></div>
+                <div class="M-D-T">
+                    <h4>Abuelita room</h4>
+                    <p>San Pedro, Monterrey</p>
+                    <h4>$750 mensuales</h4>
+                </div>
+            </div>
+            <div class="M-D alojamiento" data-id="4">
+                <div class="M-D-I" id="I-4" data-bs-toggle="modal" data-bs-target="#alojamientoModal" data-id="4"></div>
+                <div class="M-D-T">
+                    <h4>Christian Study Room</h4>
+                    <p>Zona Hotelera, Cancún</p>
+                    <h4>$1000 mensuales</h4>
+                </div>
+            </div>
+        </div>
+        <div id="Main-3">
+            <div class="M-D alojamiento" data-id="5">
+                <div class="M-D-I" id="I-5" data-bs-toggle="modal" data-bs-target="#alojamientoModal" data-id="5"></div>
+                <div class="M-D-T">
+                    <h4>Habiatacion en el centro</h4>
+                    <p>Centro, Guadalajara</p>
+                    <h4>$1500 mensuales</h4>
+                </div>
+            </div>
+            <div class="M-D alojamiento" data-id="6">
+                <div class="M-D-I" id="I-6" data-bs-toggle="modal" data-bs-target="#alojamientoModal" data-id="6"></div>
+                <div class="M-D-T">
+                    <h4>Cuarto equipado</h4>
+                    <p>Roma Norte, CDMX</p>
+                    <h4>$1300 mensuales</h4>
+                </div>
+            </div>
+            <div class="M-D alojamiento" data-id="7">
+                <div class="M-D-I" id="I-7" data-bs-toggle="modal" data-bs-target="#alojamientoModal" data-id="7"></div>
+                <div class="M-D-T">
+                    <h4>Study room</h4>
+                    <p>Col. Doctores, CDMX</p>
+                    <h4>$3000 mensuales</h4>
+                </div>
+            </div>
+            <div class="M-D alojamiento" data-id="8">
+                <div class="M-D-I" id="I-8" data-bs-toggle="modal" data-bs-target="#alojamientoModal" data-id="8"></div>
+                <div class="M-D-T">
+                    <h4>Hbitacion compartida</h4>
+                    <p>Zapopan, Jalisco</p>
+                    <h4>$2500 mensuales</h4>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de Bootstrap -->
+    <div class="modal fade" id="alojamientoModal" tabindex="-1" aria-labelledby="alojamientoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="alojamientoModalLabel">Detalles del Alojamiento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="" alt="Imagen del alojamiento" class="img-fluid rounded" id="modalImage">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 id="modalTitle"></h4>
+                            <p><strong>Ubicación:</strong> <span id="modalUbicacion"></span></p>
+                            <p><strong>Precio:</strong> $<span id="modalPrice"></span> mensuales</p>
+                            <p><strong>Descripción:</strong> <span id="modalDesc"></span></p>
+                            <p><strong>Tipo de propiedad:</strong> <span id="modalTipo"></span></p>
+                            <p><strong>Habitaciones:</strong> <span id="modalHabitaciones"></span></p>
+                            <p><strong>Baños:</strong> <span id="modalBanos"></span></p>
+                            <p><strong>Superficie:</strong> <span id="modalSuperficie"></span> m²</p>
+                            <p><strong>Amenidades:</strong> <span id="modalAmenidades"></span></p>
+                            <p><strong>Servicios:</strong> <span id="modalServicios"></span></p>
+                            <p><strong>Estacionamiento:</strong> <span id="modalEstacionamiento"></span></p>
+                            <p><strong>Reglas de la propiedad:</strong> <span id="modalReglas"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="btnReservar">Reservar Ahora</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incluir Bootstrap JS y Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <!-- Script personalizado -->
+    <script src="Menu.js"></script>
+</body>
+</html>

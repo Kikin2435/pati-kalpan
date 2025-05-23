@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Propiedad</title>
+    <link rel="stylesheet" href="PublicarAlojamiento.css">
+</head>
+<body>
+    <nav>
+        <div id="Logo"></div>                        
+    </nav>
+    <div class="register-container">
+        <h2>Publicar Propiedad</h2>
+        <form action="Menu.html" method="get">
+            <label for="titulo">Título del anuncio</label>
+            <input type="text" id="titulo" placeholder="Título del anuncio" required>
+            
+            <label for="descripcion">Descripción</label>
+            <textarea id="descripcion" placeholder="Describe la propiedad"></textarea>
+            
+            <div class="ubicacion_tipo">
+                <div id="ubicacion">
+                    <label for="ubicacion">Ubicación</label>
+                    <input type="text" id="ubicacion" placeholder="Ejemplo: Calle 123, Colonia, Ciudad, Estado, País" required>
+                </div>
+                <div id="tipo">
+                    <label for="tipo">Tipo de propiedad</label>
+                    <select id="tipo" required>
+                        <option value="">Seleccione tipo</option>
+                        <option>Casa</option>
+                        <option>Departamento</option>
+                        <option>Cabaña</option>
+                        <option>Terreno</option>
+                        <option>Local Comercial</option>
+                    </select>
+                </div>
+            </div>            
+            
+            <div class="numeros">
+                <div>
+                    <label for="habitaciones">Número de habitaciones</label>
+                    <input type="number" id="habitaciones" min="1" required>
+                </div>
+                <div>
+                    <label for="banios">Número de baños</label>
+                    <input type="number" id="banios" min="1" required>
+                </div>
+                <div>
+                    <label for="superficie">Superficie (m²)</label>
+                    <input type="number" id="superficie" min="1" required>
+                </div>
+            </div>            
+            
+            <fieldset>
+                <legend>Amenidades</legend>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="amenidades" value="Jardín"> Jardín</label>
+                    <label><input type="checkbox" name="amenidades" value="Piscina"> Piscina</label>
+                    <label><input type="checkbox" name="amenidades" value="Gimnasio"> Gimnasio</label>
+                    <label><input type="checkbox" name="amenidades" value="Seguridad 24/7"> Seguridad 24/7</label>
+                    <label><input type="checkbox" name="amenidades" value="Área de juegos"> Área de juegos</label>
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Servicios</legend>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="servicios" value="Internet"> Internet</label>
+                    <label><input type="checkbox" name="servicios" value="Luz"> Luz</label>
+                    <label><input type="checkbox" name="servicios" value="Agua"> Agua</label>
+                    <label><input type="checkbox" name="servicios" value="Gas"> Gas</label>
+                    <label><input type="checkbox" name="servicios" value="Teléfono"> Teléfono</label>
+                </div>
+            </fieldset>            
+
+            <div class="precio">
+                <div>
+                    <label for="precio">Precio de renta mensual</label>
+                    <input type="number" id="precio" placeholder="$" required>
+                </div>
+                <div>
+                    <label for="estacionamiento">Estacionamiento</label>
+                    <select id="estacionamiento" required>
+                        <option>No</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3+</option>
+                    </select>
+                </div>
+            </div>            
+            
+            <label for="reglas">Reglas de la propiedad</label>
+            <textarea id="reglas" placeholder="Reglas de la propiedad"></textarea>
+            
+            <label for="media">Imágenes y videos</label>
+            <input type="file" id="media" multiple accept="image/*,video/*" required>
+            <div id="file-names"></div>
+
+            <button type="submit">Publicar</button>            
+        </form>
+    </div>
+    <script src="PublicarAlojamiento.js"></script>
+</body>
+</html>

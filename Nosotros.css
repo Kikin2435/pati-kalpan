@@ -1,0 +1,336 @@
+*{
+    margin: 0px; 
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Cereal', sans-serif;
+}
+nav{
+    background: #E0CDB6;
+    display: flex;
+    height: 7vh;
+    border-bottom: 3px solid black;
+    font-size: large;
+}
+nav div{
+    text-align: center;
+    align-content: center;
+}
+#Logo{
+    width: 50%;
+    background-image: url("Img/Logo.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    height: 100%;
+    align-content: center;
+    justify-content: left;
+}
+.nav-text{
+    width: 43%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#Sesion{
+    width: 7%;
+    background-image: url("Img/Sesion.png");
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: auto 100%; 
+}
+#Main-image{
+    height: 93vh;
+    width: 100%;
+    background-image: url("Img/Main-image.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%; 
+}
+#Info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 50vh;
+    align-content: center;
+}
+#Info div{
+    width: 40%;
+    height: 75%;
+}
+#img-1{
+    border-radius: 25px;
+    border: 5px solid #181818;
+    background-image: url('Img/img-1.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    align-content: center;
+    height: 100%;
+}
+.Info-text{
+    font-size: larger;
+    align-content: center;
+}
+.Fundadores{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 60vh;
+    align-content: end;
+}
+.Fundadores div{
+    width: 20%;
+    height: 40%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#t1{
+    border-radius: 25px;
+    border: 5px solid #181818;
+    background-image: url('Img/angel.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+}
+#t2{
+    border-radius: 25px;
+    border: 5px solid #181818;
+    background-image: url('Img/jab0n.jpg');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+}
+#t3{
+    border-radius: 25px;
+    border: 5px solid #181818;
+    background-image: url('Img/javier.jpg');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+}
+#t1_t, #t2_t, #t3_t{
+    text-align: center;
+    align-content: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: x-large;
+}
+#img-2{
+    border-radius: 25px;
+    border: 5px solid #181818;
+    background-image: url('Img/img-2.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    align-content: center;
+}
+
+#Ventajas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 50vh;
+    align-content: center;
+}
+.Ventajas-text{
+    font-size: larger;
+    align-content: center;
+}
+
+#Ventajas div{
+    width: 30%;
+    height: 75%;
+}
+
+#img-3{
+    width: 30%;
+    height: 40%;
+    border-radius: 25px;
+    border: 5px solid #181818;
+    background-image: url('Img/img-3.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    align-content: center;
+}
+
+#Beneficios{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 50vh;
+    align-content: center;
+}
+.Beneficios-text{
+    font-size: larger;
+    align-content: center;
+}
+#Beneficios div{
+    width: 30%;
+    height: 75%;
+}
+footer{
+    height: auto;
+    background: #E0CDB6;
+    padding: 20px 0;
+    color: black;
+    font-size: medium;
+    margin-top: 20px;
+}
+
+#contacto{
+    text-align: center;
+    padding: 10px;
+}
+
+#contacto h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.contact-item i {
+    color: black;
+    margin-bottom: 1px;
+}
+
+.contact-item a {
+    color: black;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+.contact-item p {
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+#Sesion {
+    position: relative;
+    width: 7%;
+    background-image: url("Img/Sesion.png");
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: auto 100%;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    list-style: none;
+    padding: 0;
+    width: max-content;
+    min-width: 160px;
+    max-width: 90vw; 
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    overflow-y: auto; 
+    overflow-x: hidden; 
+    white-space: normal; 
+    word-wrap: break-word;
+}
+
+.dropdown li {
+    padding: 10px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.dropdown li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.dropdown li:hover {
+    background: #E0CDB6;
+}
+
+#Sesion:hover .dropdown {
+    display: block;
+}
+.nav-text div {
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.nav-text div:hover {
+    background: #c4a484; 
+    color: white;
+}
+
+nav {
+    background: #E0CDB6;
+    display: flex;
+    height: 7vh;
+    border-bottom: 3px solid black;
+    font-size: large;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.nav-text {
+    width: 60%; 
+    display: flex;
+    justify-content: space-evenly; 
+    text-align: center;
+}
+
+.nav-text a {
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.nav-text div {
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+    cursor: pointer; 
+}
+
+.nav-text div:hover {
+    background: #c4a484; 
+    color: white;
+}
+
+nav {
+    background: #E0CDB6;
+    display: flex;
+    height: 7vh;
+    border-bottom: 3px solid black;
+    font-size: large;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Esto fija el navbar en la parte superior */
+    top: 0; /* Asegura que se quede en la parte superior */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    z-index: 1000; /* Asegura que el navbar esté sobre otros elementos */
+}
+
+body {
+    padding-top: 7vh; 
+}
+
+

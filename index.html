@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        #errorMessage {
+            margin-top: 10px;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div id="Logo"></div>                       
+    </nav>
+
+    <div class="login-container">
+        <h2>Iniciar sesión</h2>
+        <div class="user-icon"></div>
+        <p>¿Es tu primera vez? <a href="RegistroUsuario.html">Regístrate</a></p>
+        <form id="loginForm" action="procesar_login.php" method="post" onsubmit="return validateForm(event)">
+            <label for="usuario">Correo electrónico</label>
+            <div class="input-container">
+                <span class="icon">📧</span>
+                <input type="email" id="usuario" name="usuario" placeholder="tucorreo@gmail.com" required>
+            </div>
+            <label for="contrasenia">Contraseña</label>
+            <div class="input-container">
+                <span class="icon">🔒</span>
+                <input type="password" id="contrasenia" name="contrasenia" placeholder="Contraseña" required>
+            </div>
+            <div id="errorMessage" style="color: red; display: none;"></div>
+            <button type="submit">Iniciar sesión</button>
+        </form>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
